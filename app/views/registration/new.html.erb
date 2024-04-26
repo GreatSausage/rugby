@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center align-items-center vh-100">
+      <div class="col-md-6">
+        <div class="border p-4 rounded border-secondary">
+          <div class="text-center mb-4">
+            <h1>Registration</h1>
+          </div>
+
+          <%= form_tag do %>
+            <div class="mb-3">
+              <%= label_tag :email, "Email:", class: "form-label" %>
+              <%= email_field_tag :email, nil, class: "form-control border-secondary" %>
+            </div>
+
+            <div class="mb-3">
+              <%= label_tag :password, "Password:", class: "form-label" %>
+              <%= password_field_tag :password, nil, class: "form-control border-secondary" %>
+            </div>
+
+            <div class="d-grid gap-2">
+              <%= submit_tag "Register", class: "btn btn-primary" %>
+              <%= link_to "Already have an account?", login_path, class: "btn btn-secondary mt-2" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
