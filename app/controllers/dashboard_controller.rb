@@ -1,6 +1,5 @@
 class DashboardController < ApplicationController
-    def index
-    end
-
-
+  def index
+    @users = User.all # Retrieve all users from the database
+  end
 end

@@ -4,6 +4,11 @@
   <title>Login</title>
 </head>
 <body>
+              <% if flash[:notice] %>
+            <div class="alert alert-success" role="alert">
+              <%= flash[:notice] %>
+            </div>
+          <% end %>
   <div class="container">
     <div class="row justify-content-center align-items-center vh-100">
       <div class="col-md-6">
@@ -12,10 +17,10 @@
             <h1>Login</h1>
           </div>
 
-          <%= form_tag do %>
+          <%= form_tag login_path do %>
             <div class="mb-3">
-              <%= label_tag :username, "Username:", class: "form-label" %>
-              <%= text_field_tag :username, nil, class: "form-control border-secondary" %>
+              <%= label_tag :email, "Email:", class: "form-label" %>
+              <%= email_field_tag :email, nil, class: "form-control border-secondary" %>
             </div>
 
             <div class="mb-3">
@@ -25,7 +30,7 @@
 
             <div class="d-grid gap-2">
               <%= submit_tag "Login", class: "btn btn-primary" %>
-              <%= link_to "Create New Account", registration_path, class: "btn btn-secondary mt-2" %> <!-- Redirect to registration page -->
+              <%= link_to "Create New Account", registration_path, class: "btn btn-secondary mt-2" %>
             </div>
           <% end %>
         </div>
